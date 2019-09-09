@@ -1,0 +1,19 @@
+﻿
+<h2 class="my-4 text-center text-lg-left">@Model.Title</h2>
+
+<div class="row">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <img class="card-img-top" src="@product.Image" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a asp-controller="Product" asp-action="Index" asp-route-id="@product.Id">@product.Name</a>
+                    </h4>
+                    <p>@product.ShortDescription</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
